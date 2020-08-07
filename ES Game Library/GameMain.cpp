@@ -11,8 +11,8 @@ bool GameMain::Initialize()
 {
 	// TODO: Add your initialization logic here
 	WindowTitle(_T("ES Game Library"));
-
-
+	chara = GraphicsDevice.CreateSpriteFromFile(_T("chara.png"));
+	chara_x = 0; chara_y = 0;
 	return true;
 }
 
@@ -36,7 +36,20 @@ void GameMain::Finalize()
 int GameMain::Update()
 {
 	// TODO: Add your update logic here
+	KeyboardState key = Keyboard->GetState();
 
+	if (key.IsKeyDown(Keys_Up)) {
+		chara_y -= 4.0f;
+	}
+	if (key.IsKeyDown(Keys_Down)) {
+		chara_y += 4.0f;
+	}
+	if (key.IsKeyDown(Keys_Left)) {
+		chara_x -= 4.0f;
+	}
+	if (key.IsKeyDown(Keys_Right)) {
+		chara_x += 4.0f;
+	}
 
 	return 0;
 }
@@ -53,7 +66,7 @@ void GameMain::Draw()
 
 
 	SpriteBatch.Begin();
-
+	SpriteBatch.Draw(*chara, Vector3(chara_x, chara_y, 0));
 
 	SpriteBatch.End();
 
