@@ -56,8 +56,7 @@ private:
 
 private:
 	// •Ï”éŒ¾
-
-
+	SPRITE title;
 	// ŠÖ”éŒ¾
 
 };

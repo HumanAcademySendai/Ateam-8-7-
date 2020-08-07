@@ -11,8 +11,7 @@ bool GameMain::Initialize()
 {
 	// TODO: Add your initialization logic here
 	WindowTitle(_T("ES Game Library"));
-
-
+	title = GraphicsDevice.CreateSpriteFromFile(_T("title.png"));
 	return true;
 }
 
@@ -37,7 +36,6 @@ int GameMain::Update()
 {
 	// TODO: Add your update logic here
 
-
 	return 0;
 }
 
@@ -53,7 +51,7 @@ void GameMain::Draw()
 
 
 	SpriteBatch.Begin();
-
+	SpriteBatch.Draw(*title, Vector3(0, 0, 0));
 
 	SpriteBatch.End();
 
