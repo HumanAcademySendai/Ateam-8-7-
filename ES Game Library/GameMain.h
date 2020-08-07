@@ -56,8 +56,7 @@ private:
 
 private:
 	// •Ï”éŒ¾
-	SPRITE chara;
-	float chara_x, chara_y;
+	SPRITE title;
 	// ŠÖ”éŒ¾
 
 };
